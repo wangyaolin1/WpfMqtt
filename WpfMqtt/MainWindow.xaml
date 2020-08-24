@@ -1,12 +1,35 @@
-﻿<Window x:Class="WpfMqtt.MainWindow"
+﻿<Window x:Name="WPFMQTT" x:Class="WpfMqtt.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfMqtt"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MQTT" Height="800" Width="1200">
     <Grid>
-        
+        <Menu Height="25" VerticalAlignment="Top">
+            <MenuItem Header="MenuItem" Height="25" Width="100">
+                <MenuItem Header="Quit" HorizontalAlignment="Left" Height="25" Width="120" Click="MenuItem_Click"/>
+            </MenuItem>
+            <MenuItem Header="MenuItem" Height="25" Width="100"/>
+            <MenuItem Header="MenuItem" Height="25" Width="100">
+                <MenuItem Header="Help" HorizontalAlignment="Left" Height="25" Width="120"/>
+                <MenuItem Header="About" HorizontalAlignment="Left" Height="25" Width="120" Click="MenuItem_Click_1"/>
+            </MenuItem>
+        </Menu>
+        <GroupBox Header="GroupBox" Margin="10,30,10,200">
+            <Grid Margin="10,10,-2,0"/>
+        </GroupBox>
+        <GroupBox Header="GroupBox" VerticalAlignment="Bottom" HorizontalAlignment="Left"  Margin="10,0,0,30" Width="400" Height="165">
+            <Grid Margin="10,10,-2,0"/>
+        </GroupBox>
+        <GroupBox Header="GroupBox" VerticalAlignment="Bottom" Margin="415,0,10,30" Height="165">
+            <Grid Margin="10,10,-2,0"/>
+        </GroupBox>
+        <StatusBar VerticalAlignment="Bottom" Margin="0,0,0,0" Height="25"  >
+            <StatusBarItem Height="25" VerticalAlignment="Top" HorizontalAlignment="Right">
+                <TextBlock TextWrapping="Wrap" Text="TextBlock"/>
+            </StatusBarItem>
+        </StatusBar>
     </Grid>
 </Window>
