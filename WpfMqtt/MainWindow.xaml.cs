@@ -25,12 +25,22 @@ namespace WpfMqtt
             InitializeComponent();
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        private void Button_Connect(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Disconnect(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MenuItem_Click_Quit(object sender, RoutedEventArgs e)
         {
             Close();
         }
 
-        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        private void MenuItem_Click_About(object sender, RoutedEventArgs e)
         {
             WpfMqtt.About about = new About();
             about.ShowDialog();

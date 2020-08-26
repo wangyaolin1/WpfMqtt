@@ -9,22 +9,46 @@
     <Grid>
         <Menu Height="25" VerticalAlignment="Top">
             <MenuItem Header="MenuItem" Height="25" Width="100">
-                <MenuItem Header="Quit" HorizontalAlignment="Left" Height="25" Width="120" Click="MenuItem_Click"/>
+                <MenuItem Header="Quit" HorizontalAlignment="Left" Height="25" Width="120" Click="MenuItem_Click_Quit"/>
             </MenuItem>
             <MenuItem Header="MenuItem" Height="25" Width="100"/>
             <MenuItem Header="MenuItem" Height="25" Width="100">
                 <MenuItem Header="Help" HorizontalAlignment="Left" Height="25" Width="120"/>
-                <MenuItem Header="About" HorizontalAlignment="Left" Height="25" Width="120" Click="MenuItem_Click_1"/>
+                <MenuItem Header="About" HorizontalAlignment="Left" Height="25" Width="120" Click="MenuItem_Click_About"/>
             </MenuItem>
         </Menu>
-        <GroupBox Header="GroupBox" Margin="10,30,10,200">
+        <GroupBox Header="GroupBox" Margin="10,30,10,230">
             <Grid Margin="10,10,-2,0"/>
         </GroupBox>
-        <GroupBox Header="GroupBox" VerticalAlignment="Bottom" HorizontalAlignment="Left"  Margin="10,0,0,30" Width="400" Height="165">
-            <Grid Margin="10,10,-2,0"/>
+        <GroupBox Header="GroupBox" VerticalAlignment="Bottom" HorizontalAlignment="Left"  Margin="10,0,0,30" Width="400" Height="200">
+            <Grid Margin="10,10,-2,0">
+                <Label Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Label Content="Label" HorizontalAlignment="Left" Margin="0,25,0,0" VerticalAlignment="Top"/>
+                <Label Content="Label" HorizontalAlignment="Left" Margin="0,50,0,0" VerticalAlignment="Top"/>
+                <Label Content="Label" HorizontalAlignment="Left" Margin="0,75,0,0" VerticalAlignment="Top"/>
+                <Label Content="Label" HorizontalAlignment="Left" Margin="0,100,0,0" VerticalAlignment="Top"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="40,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="330"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="40,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="330"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="40,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="330"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="40,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="330"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="40,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="330"/>
+                <Button Content="Connect" HorizontalAlignment="Left" Margin="10,132,0,0" VerticalAlignment="Top" Width="75" Click="Button_Connect"/>
+                <Button Content="Disconnect" HorizontalAlignment="Left" Margin="90,132,0,0" VerticalAlignment="Top" Width="76" Click="Button_Disconnect"/>
+                <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="19" Margin="171,132,0,0" Stroke="Black" VerticalAlignment="Top" Width="199"/>
+            </Grid>
         </GroupBox>
-        <GroupBox Header="GroupBox" VerticalAlignment="Bottom" Margin="415,0,10,30" Height="165">
-            <Grid Margin="10,10,-2,0"/>
+        <GroupBox Header="GroupBox" VerticalAlignment="Bottom" Margin="415,0,10,30" Height="200">
+            <Grid Margin="10,10,-2,0">
+                <Label Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120"/>
+                <Label Content="Label" HorizontalAlignment="Left" Margin="0,25,0,0" VerticalAlignment="Top" Width="120"/>
+                <Label Content="Label" HorizontalAlignment="Left" Margin="0,50,0,0" VerticalAlignment="Top" Width="120"/>
+                <ComboBox HorizontalAlignment="Left" Margin="125,4,0,0" VerticalAlignment="Top" Width="452"/>
+                <ComboBox HorizontalAlignment="Left" Margin="125,54,0,0" VerticalAlignment="Top" Width="452"/>
+                <ComboBox HorizontalAlignment="Left" Margin="125,29,0,0" VerticalAlignment="Top" Width="452"/>
+                <Button Content="Button" HorizontalAlignment="Left" Margin="662,6,0,0" VerticalAlignment="Top" Width="75"/>
+                <Button Content="Button" HorizontalAlignment="Left" Margin="582,56,0,0" VerticalAlignment="Top" Width="75"/>
+                <Button Content="Button" HorizontalAlignment="Left" Margin="582,6,0,0" VerticalAlignment="Top" Width="75"/>
+            </Grid>
         </GroupBox>
         <StatusBar VerticalAlignment="Bottom" Margin="0,0,0,0" Height="25"  >
             <StatusBarItem Height="25" VerticalAlignment="Top" HorizontalAlignment="Right">
