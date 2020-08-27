@@ -7,58 +7,70 @@
         mc:Ignorable="d"
         Title="MQTT" Height="800" Width="1200">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="400"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
-            <RowDefinition Height="240"/>
+            <RowDefinition Height="125"/>
+            <RowDefinition Height="125"/>
+            <RowDefinition Height="150"/>
         </Grid.RowDefinitions>
-        <Menu Height="25" VerticalAlignment="Top">
-            <MenuItem Header="MenuItem" Height="25" Width="100">
+        <Menu Height="25" VerticalAlignment="Top" Grid.ColumnSpan="2">
+            <MenuItem Header="File" Height="25" Width="100">
                 <MenuItem Header="Quit" HorizontalAlignment="Left" Height="25" Width="120" Click="MenuItem_Click_Quit"/>
             </MenuItem>
-            <MenuItem Header="MenuItem" Height="25" Width="100"/>
-            <MenuItem Header="MenuItem" Height="25" Width="100">
+            <MenuItem Header="Set" Height="25" Width="100"/>
+            <MenuItem Header="Help" Height="25" Width="100">
                 <MenuItem Header="Help" HorizontalAlignment="Left" Height="25" Width="120"/>
                 <MenuItem Header="About" HorizontalAlignment="Left" Height="25" Width="120" Click="MenuItem_Click_About"/>
             </MenuItem>
         </Menu>
-        <GroupBox Header="GroupBox" Margin="10,30,10,2">
-            <Grid Margin="10,10,-2,0"/>
+        <GroupBox Header="Message" Margin="10,30,10,7" MinHeight="30" Grid.ColumnSpan="2">
+            <Grid Margin="10,10,0,0"/>
         </GroupBox>
-        <GroupBox Header="GroupBox" HorizontalAlignment="Left"  Margin="10,10,0,30" Width="400" Grid.Row="1">
-            <Grid Margin="10,10,-2,0">
-                <Label Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <Label Content="Label" HorizontalAlignment="Left" Margin="0,25,0,0" VerticalAlignment="Top"/>
-                <Label Content="Label" HorizontalAlignment="Left" Margin="0,50,0,0" VerticalAlignment="Top"/>
-                <Label Content="Label" HorizontalAlignment="Left" Margin="0,75,0,0" VerticalAlignment="Top"/>
-                <Label Content="Label" HorizontalAlignment="Left" Margin="0,100,0,0" VerticalAlignment="Top"/>
-                <TextBox HorizontalAlignment="Left" Height="23" Margin="40,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="330"/>
-                <TextBox HorizontalAlignment="Left" Height="23" Margin="40,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="330"/>
-                <TextBox HorizontalAlignment="Left" Height="23" Margin="40,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="330"/>
-                <TextBox HorizontalAlignment="Left" Height="23" Margin="40,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="330"/>
-                <TextBox HorizontalAlignment="Left" Height="23" Margin="40,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="330"/>
-                <Button Content="Connect" HorizontalAlignment="Left" Margin="10,132,0,0" VerticalAlignment="Top" Width="75" Click="Button_Connect"/>
-                <Button Content="Disconnect" HorizontalAlignment="Left" Margin="90,132,0,0" VerticalAlignment="Top" Width="76" Click="Button_Disconnect"/>
-                <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="19" Margin="171,132,0,0" Stroke="Black" VerticalAlignment="Top" Width="199"/>
+        <GroupBox Header="Subscriptions " Margin="10" MinHeight="30" Grid.Row="1">
+            <Grid Margin="10,10,0,0"/>
+        </GroupBox>
+        <GroupBox Header="Topic" Margin="10" Grid.Row="2">
+            <Grid Margin="10,10,0,0">
+                <Label Content="Topic to Subscribe" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Height="25"/>
+                <ComboBox Margin="125,4,90,0" VerticalAlignment="Top" Height="21"/>
+                <Button Content="Unsubscribe " HorizontalAlignment="Left" Margin="205,30,0,0" VerticalAlignment="Top" Width="75" Height="19"/>
+                <Button Content="Subscribe " HorizontalAlignment="Left" Margin="125,30,0,0" VerticalAlignment="Top" Width="75" Height="19"/>
+                <Button Content="..." Margin="0,6,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75"/>
             </Grid>
         </GroupBox>
-        <GroupBox Header="GroupBox" Margin="415,10,10,30" Grid.Row="1">
-            <Grid Margin="10,10,-2,0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition Width="176"/>
-                </Grid.ColumnDefinitions>
-                <Label Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120"/>
-                <Label Content="Label" HorizontalAlignment="Left" Margin="0,25,0,0" VerticalAlignment="Top" Width="120"/>
-                <Label Content="Label" HorizontalAlignment="Left" Margin="0,50,0,0" VerticalAlignment="Top" Width="120"/>
-                <ComboBox Margin="125,4,0,0" VerticalAlignment="Top"/>
-                <ComboBox Margin="125,54,0,0" VerticalAlignment="Top"/>
-                <ComboBox Margin="125,29,0,0" VerticalAlignment="Top"/>
-                <Button Content="Button" HorizontalAlignment="Left" Margin="90,6,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1"/>
-                <Button Content="Button" HorizontalAlignment="Left" Margin="10,56,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1"/>
-                <Button Content="Button" HorizontalAlignment="Left" Margin="10,6,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1"/>
+        <GroupBox Header="Interactions" Margin="10,10,10,30" Grid.Row="3">
+            <Grid Margin="0,0,0,0">
+                <Label Content="Topic to publish " HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="120" Height="25"/>
+                <ComboBox Margin="135,4,90,0" VerticalAlignment="Top" Height="21"/>
+                <Label Content="messag to publish " HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top" Width="120" Height="25"/>
+                <ComboBox Margin="135,34,90,0" VerticalAlignment="Top" Height="21"/>
+                <Button Content="Publish" HorizontalAlignment="Left" Margin="135,60,0,0" VerticalAlignment="Top" Width="75" Height="19"/>
+                <Button Content="..." VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" Margin="0,6,10,0"/>
+                <Button Content="..." VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" Margin="0,36,10,0"/>
             </Grid>
         </GroupBox>
-        <StatusBar VerticalAlignment="Bottom" Margin="0,0,0,0" Height="25" Grid.Row="1"  >
+        <GroupBox Header="Client"  Margin="10,10,10,30" Grid.Row="1" Grid.RowSpan="3" Grid.Column="1">
+            <Grid Margin="10,10,0,0">
+                <Label Content="URL" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Label Content="Port" HorizontalAlignment="Left" Margin="0,25,0,0" VerticalAlignment="Top"/>
+                <Label Content="Client" HorizontalAlignment="Left" Margin="0,50,0,0" VerticalAlignment="Top"/>
+                <Label Content="User" HorizontalAlignment="Left" Margin="0,75,0,0" VerticalAlignment="Top"/>
+                <Label Content="PWD" HorizontalAlignment="Left" Margin="0,100,0,0" VerticalAlignment="Top"/>
+                <TextBox Height="23" Margin="40,4,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <TextBox Height="23" Margin="40,104,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <TextBox Height="23" Margin="40,79,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <TextBox Height="23" Margin="40,54,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <TextBox Height="23" Margin="40,29,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <Button Content="Connect" HorizontalAlignment="Left" Margin="40,132,0,0" VerticalAlignment="Top" Width="75" Click="Button_Connect"/>
+                <Button Content="Disconnect" HorizontalAlignment="Left" Margin="120,132,0,0" VerticalAlignment="Top" Width="76" Click="Button_Disconnect"/>
+                <Rectangle Fill="#FFF4F4F5" Height="19" Margin="201,132,10,0" Stroke="Black" VerticalAlignment="Top"/>
+            </Grid>
+        </GroupBox>
+        <StatusBar VerticalAlignment="Bottom" Margin="0,0,0,0" Height="25" Grid.Row="3" Grid.ColumnSpan="2"  >
             <StatusBarItem Height="25" VerticalAlignment="Top" HorizontalAlignment="Right">
                 <TextBlock TextWrapping="Wrap" Text="TextBlock"/>
             </StatusBarItem>
