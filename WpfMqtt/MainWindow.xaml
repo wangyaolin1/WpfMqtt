@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="MQTT" Height="800" Width="1200">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="240"/>
+        </Grid.RowDefinitions>
         <Menu Height="25" VerticalAlignment="Top">
             <MenuItem Header="MenuItem" Height="25" Width="100">
                 <MenuItem Header="Quit" HorizontalAlignment="Left" Height="25" Width="120" Click="MenuItem_Click_Quit"/>
@@ -17,10 +21,10 @@
                 <MenuItem Header="About" HorizontalAlignment="Left" Height="25" Width="120" Click="MenuItem_Click_About"/>
             </MenuItem>
         </Menu>
-        <GroupBox Header="GroupBox" Margin="10,30,10,230">
+        <GroupBox Header="GroupBox" Margin="10,30,10,2">
             <Grid Margin="10,10,-2,0"/>
         </GroupBox>
-        <GroupBox Header="GroupBox" VerticalAlignment="Bottom" HorizontalAlignment="Left"  Margin="10,0,0,30" Width="400" Height="200">
+        <GroupBox Header="GroupBox" HorizontalAlignment="Left"  Margin="10,10,0,30" Width="400" Grid.Row="1">
             <Grid Margin="10,10,-2,0">
                 <Label Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                 <Label Content="Label" HorizontalAlignment="Left" Margin="0,25,0,0" VerticalAlignment="Top"/>
@@ -37,20 +41,24 @@
                 <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="19" Margin="171,132,0,0" Stroke="Black" VerticalAlignment="Top" Width="199"/>
             </Grid>
         </GroupBox>
-        <GroupBox Header="GroupBox" VerticalAlignment="Bottom" Margin="415,0,10,30" Height="200">
+        <GroupBox Header="GroupBox" Margin="415,10,10,30" Grid.Row="1">
             <Grid Margin="10,10,-2,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="176"/>
+                </Grid.ColumnDefinitions>
                 <Label Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120"/>
                 <Label Content="Label" HorizontalAlignment="Left" Margin="0,25,0,0" VerticalAlignment="Top" Width="120"/>
                 <Label Content="Label" HorizontalAlignment="Left" Margin="0,50,0,0" VerticalAlignment="Top" Width="120"/>
-                <ComboBox HorizontalAlignment="Left" Margin="125,4,0,0" VerticalAlignment="Top" Width="452"/>
-                <ComboBox HorizontalAlignment="Left" Margin="125,54,0,0" VerticalAlignment="Top" Width="452"/>
-                <ComboBox HorizontalAlignment="Left" Margin="125,29,0,0" VerticalAlignment="Top" Width="452"/>
-                <Button Content="Button" HorizontalAlignment="Left" Margin="662,6,0,0" VerticalAlignment="Top" Width="75"/>
-                <Button Content="Button" HorizontalAlignment="Left" Margin="582,56,0,0" VerticalAlignment="Top" Width="75"/>
-                <Button Content="Button" HorizontalAlignment="Left" Margin="582,6,0,0" VerticalAlignment="Top" Width="75"/>
+                <ComboBox Margin="125,4,0,0" VerticalAlignment="Top"/>
+                <ComboBox Margin="125,54,0,0" VerticalAlignment="Top"/>
+                <ComboBox Margin="125,29,0,0" VerticalAlignment="Top"/>
+                <Button Content="Button" HorizontalAlignment="Left" Margin="90,6,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1"/>
+                <Button Content="Button" HorizontalAlignment="Left" Margin="10,56,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1"/>
+                <Button Content="Button" HorizontalAlignment="Left" Margin="10,6,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1"/>
             </Grid>
         </GroupBox>
-        <StatusBar VerticalAlignment="Bottom" Margin="0,0,0,0" Height="25"  >
+        <StatusBar VerticalAlignment="Bottom" Margin="0,0,0,0" Height="25" Grid.Row="1"  >
             <StatusBarItem Height="25" VerticalAlignment="Top" HorizontalAlignment="Right">
                 <TextBlock TextWrapping="Wrap" Text="TextBlock"/>
             </StatusBarItem>
