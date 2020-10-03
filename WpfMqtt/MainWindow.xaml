@@ -36,21 +36,18 @@
         <GroupBox Header="Topic" Margin="10" Grid.Row="2">
             <Grid Margin="10,10,0,0">
                 <Label Content="Topic to Subscribe" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Height="25"/>
-                <ComboBox Margin="125,4,90,0" VerticalAlignment="Top" Height="21"/>
                 <Button Content="Unsubscribe " HorizontalAlignment="Left" Margin="205,30,0,0" VerticalAlignment="Top" Width="75" Height="19"/>
                 <Button Content="Subscribe " HorizontalAlignment="Left" Margin="125,30,0,0" VerticalAlignment="Top" Width="75" Height="19"/>
-                <Button Content="..." Margin="0,6,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75"/>
+                <TextBox Height="23" Margin="125,2,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
             </Grid>
         </GroupBox>
         <GroupBox Header="Interactions" Margin="10,10,10,30" Grid.Row="3">
             <Grid Margin="0,0,0,0">
                 <Label Content="Topic to publish " HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="120" Height="25"/>
-                <ComboBox Margin="135,4,90,0" VerticalAlignment="Top" Height="21"/>
                 <Label Content="messag to publish " HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top" Width="120" Height="25"/>
-                <ComboBox Margin="135,34,90,0" VerticalAlignment="Top" Height="21"/>
                 <Button Content="Publish" HorizontalAlignment="Left" Margin="135,60,0,0" VerticalAlignment="Top" Width="75" Height="19"/>
-                <Button Content="..." VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" Margin="0,6,10,0"/>
-                <Button Content="..." VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" Margin="0,36,10,0"/>
+                <TextBox Height="23" Margin="135,2,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <TextBox Height="23" Margin="135,32,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
             </Grid>
         </GroupBox>
         <GroupBox Header="Client"  Margin="10,10,10,30" Grid.Row="1" Grid.RowSpan="3" Grid.Column="1">
@@ -60,14 +57,16 @@
                 <Label Content="Client" HorizontalAlignment="Left" Margin="0,50,0,0" VerticalAlignment="Top"/>
                 <Label Content="User" HorizontalAlignment="Left" Margin="0,75,0,0" VerticalAlignment="Top"/>
                 <Label Content="PWD" HorizontalAlignment="Left" Margin="0,100,0,0" VerticalAlignment="Top"/>
-                <TextBox Height="23" Margin="40,4,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-                <TextBox Height="23" Margin="40,104,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-                <TextBox Height="23" Margin="40,79,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-                <TextBox Height="23" Margin="40,54,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-                <TextBox Height="23" Margin="40,29,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-                <Button Content="Connect" HorizontalAlignment="Left" Margin="40,132,0,0" VerticalAlignment="Top" Width="75" Click="Button_Connect"/>
-                <Button Content="Disconnect" HorizontalAlignment="Left" Margin="120,132,0,0" VerticalAlignment="Top" Width="76" Click="Button_Disconnect"/>
-                <Rectangle Fill="#FFF4F4F5" Height="19" Margin="201,132,10,0" Stroke="Black" VerticalAlignment="Top"/>
+                <TextBox x:Name="txtbox_Url" Height="23" Margin="40,4,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="{Binding ActualBrokerUrl}"/>
+                <TextBox Height="23" Margin="40,29,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="{Binding SelectedPort}"/>
+                <TextBox x:Name="txtBox_User" Height="23" Margin="40,54,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="{Binding ClientName}"/>
+                <TextBox Height="23" Margin="40,104,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="{Binding User}"/>
+                <TextBox Height="23" Margin="40,79,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="{Binding Password}"/>
+                
+                
+                <Button Content="Connect" HorizontalAlignment="Left" Margin="40,132,0,0" VerticalAlignment="Top" Width="75" Command="{Binding Button_Connect_Clicked_Command}"/>
+                <Button Content="Disconnect" HorizontalAlignment="Left" Margin="120,132,0,0" VerticalAlignment="Top" Width="76" Command="{Binding Button_Disconnect_Clicked_Command}"/>
+                <Rectangle Fill="{Binding ConnectColor}" Height="19" Margin="201,132,10,0" Stroke="Black" VerticalAlignment="Top"/>
             </Grid>
         </GroupBox>
         <StatusBar VerticalAlignment="Bottom" Margin="0,0,0,0" Height="25" Grid.Row="3" Grid.ColumnSpan="2"  >

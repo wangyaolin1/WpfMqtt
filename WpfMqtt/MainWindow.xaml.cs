@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using MQTT_Client.ViewModels;
+
 namespace WpfMqtt
 {
     /// <summary>
@@ -20,18 +22,35 @@ namespace WpfMqtt
     /// </summary>
     public partial class MainWindow : Window
     {
+        UI_ViewModel ViewModel = new UI_ViewModel();
+
         public MainWindow()
         {
             InitializeComponent();
+
+            base.DataContext = ViewModel;
+
+            Closing += ViewModel.OnWindowClosing;
         }
 
-        private void Button_Connect(object sender, RoutedEventArgs e)
+        private void userCertificateValidationCallback(object sender)
         {
-
+            Console.WriteLine("Certificate validated");
         }
 
-        private void Button_Disconnect(object sender, RoutedEventArgs e)
+
+        // this code runs when the main window closes (end of the app)
+        protected override void OnClosed(EventArgs e)
         {
+            base.OnClosed(e);
+            App.Current.Shutdown();
+        }
+
+        private void P_w_d_Box_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            var box = sender as PasswordBox;
+
+            UI_ViewModel.the_p_w_d = box.SecurePassword;
 
         }
 
