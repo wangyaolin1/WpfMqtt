@@ -28,10 +28,22 @@
             </MenuItem>
         </Menu>
         <GroupBox Header="Message" Margin="10,30,10,7" MinHeight="30" Grid.ColumnSpan="2">
-            <Grid Margin="10,10,0,0"/>
+            <TextBox TextWrapping="Wrap" Margin="0,0,-12,-22" Text="{Binding TbDataText}"/>
+            <!--<Grid Margin="10,10,0,0">
+                <DataGrid>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn/>
+                        <DataGridTextColumn/>
+                        <DataGridTextColumn/>
+                        <DataGridTextColumn/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>-->
         </GroupBox>
         <GroupBox Header="Subscriptions " Margin="10" MinHeight="30" Grid.Row="1">
-            <Grid Margin="10,10,0,0"/>
+            <Grid Margin="10,10,0,0">
+                <ListBox/>
+            </Grid>
         </GroupBox>
         <GroupBox Header="Topic" Margin="10" Grid.Row="2">
             <Grid Margin="10,10,0,0">
@@ -62,11 +74,11 @@
                 <TextBox x:Name="txtBox_User" Height="23" Margin="40,54,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="{Binding ClientName}"/>
                 <TextBox Height="23" Margin="40,104,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="{Binding User}"/>
                 <TextBox Height="23" Margin="40,79,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="{Binding Password}"/>
-                
-                
+
+
                 <Button Content="Connect" HorizontalAlignment="Left" Margin="40,132,0,0" VerticalAlignment="Top" Width="75" Command="{Binding Button_Connect_Clicked_Command}"/>
                 <Button Content="Disconnect" HorizontalAlignment="Left" Margin="120,132,0,0" VerticalAlignment="Top" Width="76" Command="{Binding Button_Disconnect_Clicked_Command}"/>
-                <Rectangle Fill="{Binding ConnectColor}" Height="19" Margin="201,132,10,0" Stroke="Black" VerticalAlignment="Top"/>
+                <TextBlock Margin="201,132,10,0" TextWrapping="Wrap" Background="{Binding ConnectColor}" Text="{Binding ConnectText}" VerticalAlignment="Top" Height="19" TextAlignment="Center"/>
             </Grid>
         </GroupBox>
         <StatusBar VerticalAlignment="Bottom" Margin="0,0,0,0" Height="25" Grid.Row="3" Grid.ColumnSpan="2"  >

@@ -191,6 +191,8 @@ namespace MQTT_Client.ViewModels
 
         private string _receivedMessage;
 
+        private string _connectText;
+
         private System.Windows.Media.Brush _connectColor;
 
         private ComboBoxPropertiesItem _topicPublishShadow;
@@ -341,6 +343,7 @@ namespace MQTT_Client.ViewModels
             TextBox_Messages_Visibility = Visibility.Hidden;
 
             ConnectColor = greyBrush;
+            ConnectText = "Not Connected";
 
             _connect_CleanSession = false;
             _showClientMessages = true;
@@ -1068,6 +1071,7 @@ namespace MQTT_Client.ViewModels
                 //tbData.ScrollToEnd();
             }
 
+            ConnectText = e.ConnectionState ? "Connected" : "Connection Closed";
             ConnectColor = e.ConnectionState ? greenBrush : greyBrush;
 
             Console.WriteLine(e.ConnectionState ? "Connected: " + sender.ToString() : "Connection closed: " + sender.ToString() + " " + e.ExceptionMessage);          
@@ -1209,6 +1213,22 @@ namespace MQTT_Client.ViewModels
                 { }
             }
             
+        }
+        #endregion
+
+        #region Binding ConnectText
+        public string ConnectText
+        {
+            get
+            {
+                return _connectText;
+            }
+            set
+            {
+                if (SetProperty(ref _connectText, value))
+                { }
+            }
+
         }
         #endregion
 
