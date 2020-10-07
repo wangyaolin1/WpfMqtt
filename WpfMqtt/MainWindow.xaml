@@ -28,7 +28,7 @@
             </MenuItem>
         </Menu>
         <GroupBox Header="Message" Margin="10,30,10,7" MinHeight="30" Grid.ColumnSpan="2">
-            <TextBox TextWrapping="Wrap" Margin="0,0,-12,-22" Text="{Binding TbDataText}"/>
+            <TextBox TextWrapping="Wrap" Margin="0,0,0,0" Text="{Binding TbDataText}"/>
             <!--<Grid Margin="10,10,0,0">
                 <DataGrid>
                     <DataGrid.Columns>
